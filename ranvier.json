@@ -3,7 +3,6 @@
     "bundles": [
         "bundle-example-areas",
         "bundle-example-channels",
-        "bundle-example-classes",
         "bundle-example-combat",
         "bundle-example-commands",
         "bundle-example-debug",

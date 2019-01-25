@@ -8,7 +8,7 @@ const PlayerClass = require('../player-class');
 module.exports = srcPath => {
     return {
         name: 'Barbarian',
-        description: '',
+        description: 'Lysras Daraln, Dwarf Barbarian',
         abilityTable: {},
 
         setupPlayer: (state, player) => {
@@ -21,7 +21,8 @@ module.exports = srcPath => {
             cls.int = 10;
             cls.wis = 12;
             cls.cha = 8;
-            cls.hp = 15;
+            cls.maxHp = 15;
+            cls.currentHp = 15;
             cls.ac = 14;
             cls.hitdice = '1d12';
             cls.level = 1;
