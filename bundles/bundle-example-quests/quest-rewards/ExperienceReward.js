@@ -1,7 +1,7 @@
 'use strict';
 
 const { QuestReward } = require('ranvier');
-const LevelUtil = require('@bundles/bundle-example-lib/lib/LevelUtil');
+const LevelUtil = require('../../bundle-example-lib/lib/LevelUtil');
 
 /**
  * Quest reward that gives experience
@@ -20,28 +20,34 @@ const LevelUtil = require('@bundles/bundle-example-lib/lib/LevelUtil');
  *     amount: 500
  */
 module.exports = class ExperienceReward extends QuestReward {
-  static reward(GameState, quest, config, player) {
-    const amount = this._getAmount(quest, config, player);
-    player.emit('experience', amount);
-  }
-
-  static display(GameState, quest, config, player) {
-    const amount = this._getAmount(quest, config, player);
-    return `Experience: <b>${amount}</b>`;
-  }
-
-  static _getAmount(quest, config, player) {
-    config = Object.assign({
-      amount: 0,
-      leveledTo: null,
-    }, config);
-
-    let amount = config.amount;
-    if (config.leveledTo) {
-      const level = config.leveledTo === 'PLAYER' ? player.level : quest.config.level;
-      amount = LevelUtil.mobExp(level) * amount;
+    static reward(GameState, quest, config, player) {
+        const amount = this._getAmount(quest, config, player);
+        player.emit('experience', amount);
     }
 
-    return amount;
-  }
+    static display(GameState, quest, config, player) {
+        const amount = this._getAmount(quest, config, player);
+        return `Experience: <b>${amount}</b>`;
+    }
+
+    static _getAmount(quest, config, player) {
+        config = Object.assign(
+            {
+                amount: 0,
+                leveledTo: null,
+            },
+            config
+        );
+
+        let amount = config.amount;
+        if (config.leveledTo) {
+            const level =
+                config.leveledTo === 'PLAYER'
+                    ? player.level
+                    : quest.config.level;
+            amount = LevelUtil.mobExp(level) * amount;
+        }
+
+        return amount;
+    }
 };
