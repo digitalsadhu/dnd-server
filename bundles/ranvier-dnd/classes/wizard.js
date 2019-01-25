@@ -56,8 +56,26 @@ module.exports = srcPath => {
                 'Simple, Versatile'
             );
 
+            cls.cantrips = ['Light', 'Mage Hand', 'Ray of Frost'];
+            cls.spellbookSpells = [
+                'Burning Hands',
+                'Charm Person',
+                'Feather Fall',
+                'Mage Armor',
+                'Magic Missile',
+                'Sleep',
+            ];
+            cls.preparedSpells = [
+                'Burning Hands',
+                'Charm Person',
+                'Magic Missile',
+                'Sleep',
+            ];
+            cls.maxSpellSlots = 2;
+            cls.currentSpellSlots = 2;
+
             player.prompt =
-                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> ]';
+                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <b><red>%slots.current%</red></b>/<red>%slots.max%</red> <b>ss</b> ]';
         },
     };
 };

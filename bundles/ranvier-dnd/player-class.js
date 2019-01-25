@@ -476,6 +476,61 @@ module.exports = class PlayerClass {
         }
     }
 
+    get maxSpellSlots() {
+        return this.player.getBaseAttribute('slots');
+    }
+
+    set maxSpellSlots(value) {
+        if (this.player.hasAttribute('slots')) {
+            this.player.attributes.get('slots').setBase(value);
+        } else {
+            const slots = this.state.AttributeFactory.create('slots', value);
+            this.player.addAttribute(slots);
+        }
+    }
+
+    get currentSpellSlots() {
+        return this.player.getAttribute('slots');
+    }
+
+    set currentSpellSlots(value) {
+        if (this.player.hasAttribute('slots')) {
+            let diff = Math.abs(this.maxSpellSlots - value);
+            this.player.setAttributeToMax('slots');
+            if (value < 0) diff = this.maxSpellSlots;
+            if (value < this.maxSpellSlots)
+                this.player.lowerAttribute('slots', diff);
+            else if (value > this.maxSpellSlots)
+                this.player.raiseAttribute('slots', diff);
+        } else {
+            this.maxSpellSlots = value;
+        }
+    }
+
+    get cantrips() {
+        return this.player.getMeta('cantrips') || [];
+    }
+
+    set cantrips(value) {
+        this.player.setMeta('cantrips', value);
+    }
+
+    get preparedSpells() {
+        return this.player.getMeta('preparedSpells') || [];
+    }
+
+    set preparedSpells(value) {
+        this.player.setMeta('preparedSpells', value);
+    }
+
+    get spellbookSpells() {
+        return this.player.getMeta('spellbookSpells') || [];
+    }
+
+    set spellbookSpells(value) {
+        this.player.setMeta('spellbookSpells', value);
+    }
+
     get ac() {
         return this.player.getAttribute('ac');
     }

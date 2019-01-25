@@ -59,8 +59,20 @@ module.exports = srcPath => {
             cls.addWeapon('Mace', '5ft', +4, '1d6+2', 'Simple');
             cls.addWeapon('Unarmed Strike', '5ft', +4, '3', 'Simple');
 
+            cls.cantrips = ['Guidance', 'Sacred Flame', 'Spare the Dying'];
+            cls.preparedSpells = [
+                'Bane',
+                'Bless',
+                'Cure Wounds',
+                'Guiding Bolt',
+                'Healing Word',
+                'Inflict Wounds',
+            ];
+            cls.maxSpellSlots = 2;
+            cls.currentSpellSlots = 2;
+
             player.prompt =
-                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> ]';
+                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <b><red>%slots.current%</red></b>/<red>%slots.max%</red> <b>ss</b> ]';
         },
     };
 };

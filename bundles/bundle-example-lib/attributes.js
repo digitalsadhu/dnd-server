@@ -10,6 +10,7 @@ module.exports = [
     { name: 'armor', base: 0 },
     { name: 'critical', base: 0 },
 
+    { name: 'slots', base: 0 },
     { name: 'proficiency', base: 0 },
     { name: 'speed', base: 0 },
     { name: 'lvl', base: 0 },
