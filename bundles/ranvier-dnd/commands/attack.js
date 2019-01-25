@@ -2,6 +2,7 @@
 
 const { EventUtil } = require('ranvier');
 const PlayerClass = require('../player-class');
+const a = require('indefitite');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
@@ -79,23 +80,31 @@ module.exports = srcPath => {
             }
 
             const attack = cls.attack(name, type, sneak);
-            let crit = attack.rolls.isCrit() ? ' CRITICAL HIT!' : '';
+            let crit = attack.rolls.isCrit() ? ' <red>CRITICAL HIT!</red>' : '';
 
-            s(`${player.name} attacks using weapon ${name}`);
-            s(``);
-            s(`Attack roll: ${attack.rolls.attackRoll.total}`);
-            s(`${attack.rolls.attackRoll}${advantageDisadvantageNotes}${crit}`);
-            s(``);
-            s(`Damage roll: ${attack.rolls.damageRoll.total}`);
-            s(`${attack.rolls.damageRoll}${sneakAttackNotes}`);
-            s(``);
-            s(`Weapon information: ${name}`);
             s(
-                `Range: ${attack.range}, Modifier: ${
-                    attack.modifier
-                }, Damage: ${attack.damage}`
+                `<cyan>${
+                    player.name
+                }</cyan> makes an attack roll wielding <cyan>${a(name)}</cyan>`
             );
-            s(`${attack.notes}`);
+            // s(``);
+            s(
+                `Attack roll: <yellow>${
+                    attack.rolls.attackRoll.total
+                }</yellow>${crit}`
+            );
+            // s(`${attack.rolls.attackRoll}${advantageDisadvantageNotes}${crit}`);
+            // s(``);
+            s(`Damage roll: <yellow>${attack.rolls.damageRoll.total}</yellow>`);
+            // s(`${attack.rolls.damageRoll}${sneakAttackNotes}`);
+            // s(``);
+            // s(`Weapon information: ${name}`);
+            // s(
+            //     `Range: ${attack.range}, Modifier: ${
+            //         attack.modifier
+            //     }, Damage: ${attack.damage}`
+            // );
+            // s(`${attack.notes}`);
         },
     };
 };

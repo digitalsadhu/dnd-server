@@ -4,32 +4,49 @@ const PlayerClass = require('../player-class');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
+    const s = m => Broadcast.sayAtExcept(player.room, m);
 
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
 
             if (!input) {
-                Broadcast.sayAt(player, `${cls.currentHp}/${cls.maxHp}`);
+                s(
+                    `<cyan>${player.name}'s</cyan> hit points are<yellow>${
+                        cls.currentHp
+                    }/${cls.maxHp}</yellow>`
+                );
                 return;
             }
 
             if (input.trim() === '/') {
-                Broadcast.sayAt(player, `${cls.currentHp}/${cls.maxHp}`);
+                s(
+                    `<cyan>${player.name}'s</cyan> hit points are<yellow>${
+                        cls.currentHp
+                    }/${cls.maxHp}</yellow>`
+                );
                 return;
             }
 
             if (input.includes('-') || input.includes('+')) {
                 const newValue = parseInt(input, 10);
                 cls.currentHp = cls.currentHp + newValue;
-                Broadcast.sayAt(player, `${cls.currentHp}/${cls.maxHp}`);
+                s(
+                    `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
+                        cls.currentHp
+                    }/${cls.maxHp}</yellow>`
+                );
                 return;
             }
 
             if (!input.includes('/')) {
                 const newValue = parseInt(input, 10);
                 cls.currentHp = newValue;
-                Broadcast.sayAt(player, `${cls.currentHp}/${cls.maxHp}`);
+                s(
+                    `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
+                        cls.currentHp
+                    }/${cls.maxHp}</yellow>`
+                );
                 return;
             }
 
@@ -48,7 +65,11 @@ module.exports = srcPath => {
                 }
             }
 
-            Broadcast.sayAt(player, `${cls.currentHp}/${cls.maxHp}`);
+            s(
+                `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
+                    cls.currentHp
+                }/${cls.maxHp}</yellow>`
+            );
         },
     };
 };

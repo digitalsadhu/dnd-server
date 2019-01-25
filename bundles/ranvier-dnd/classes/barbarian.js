@@ -9,13 +9,12 @@ module.exports = srcPath => {
     return {
         name: 'Barbarian',
         description: '',
-        abilityTable: {
-            1: { skills: ['rage', 'two weapon fighting'] },
-        },
+        abilityTable: {},
 
         setupPlayer: (state, player) => {
             const cls = new PlayerClass(player, state);
             cls.class = 'barbarian';
+            cls.race = 'dwarf';
             cls.str = 17;
             cls.dex = 13;
             cls.con = 16;
@@ -39,6 +38,8 @@ module.exports = srcPath => {
             cls.weaponProficiencies = ['Martial Weapons', 'Simple Weapons'];
             cls.languageProficiencies = ['Common', 'Dwarvish'];
             cls.defenses = ['Poison'];
+
+            player.setMeta('weapons', []);
 
             cls.addWeapon(
                 'Greataxe',
