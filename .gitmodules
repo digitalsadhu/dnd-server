@@ -1,0 +1,3 @@
+[submodule "bundles/ranvier-dice-roller"]
+	path = bundles/ranvier-dice-roller
+	url = https://github.com/digitalsadhu/ranvier-dice-roller.git

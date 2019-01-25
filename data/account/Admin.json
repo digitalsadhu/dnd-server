@@ -1,0 +1,113 @@
+{
+  "username": "Admin",
+  "characters": [
+    {
+      "username": "Admin",
+      "deleted": false
+    },
+    {
+      "username": "Bin",
+      "deleted": true
+    },
+    {
+      "username": "Joe",
+      "deleted": true
+    },
+    {
+      "username": "Lim",
+      "deleted": true
+    },
+    {
+      "username": "Lom",
+      "deleted": true
+    },
+    {
+      "username": "Jjabrams",
+      "deleted": true
+    },
+    {
+      "username": "Omm",
+      "deleted": true
+    },
+    {
+      "username": "Asdd",
+      "deleted": true
+    },
+    {
+      "username": "Yui",
+      "deleted": true
+    },
+    {
+      "username": "Uiy",
+      "deleted": true
+    },
+    {
+      "username": "Wer",
+      "deleted": true
+    },
+    {
+      "username": "Pop",
+      "deleted": true
+    },
+    {
+      "username": "Ujh",
+      "deleted": true
+    },
+    {
+      "username": "Balls",
+      "deleted": true
+    },
+    {
+      "username": "Balz",
+      "deleted": true
+    },
+    {
+      "username": "Jamz",
+      "deleted": true
+    },
+    {
+      "username": "Jjj",
+      "deleted": true
+    },
+    {
+      "username": "Buzz",
+      "deleted": true
+    },
+    {
+      "username": "Jojo",
+      "deleted": true
+    },
+    {
+      "username": "Nub",
+      "deleted": true
+    },
+    {
+      "username": "Job",
+      "deleted": true
+    },
+    {
+      "username": "Jimjam",
+      "deleted": true
+    },
+    {
+      "username": "Jojojo",
+      "deleted": true
+    },
+    {
+      "username": "Bumbum",
+      "deleted": true
+    },
+    {
+      "username": "Asdf",
+      "deleted": true
+    },
+    {
+      "username": "Samwise",
+      "deleted": false
+    }
+  ],
+  "password": "$2a$10$0LmX94dgDQzOvQhUsiiYBe3nTmVBfFv4HJhv.3fZaXWdW6YrzAcwK",
+  "banned": false,
+  "deleted": false,
+  "metadata": {}
+}
