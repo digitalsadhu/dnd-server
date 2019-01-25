@@ -10,7 +10,9 @@ module.exports = srcPath => {
             const roller = new DiceRoller();
             Broadcast.sayAtExcept(
                 player,
-                `${player.name} rolls ${roller.roll(args)}`
+                `<cyan>${
+                    player.name
+                }</cyan> rolls the dice! <yellow>${roller.roll(args)}</yellow>`
             );
         },
     };
