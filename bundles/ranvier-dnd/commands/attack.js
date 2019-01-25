@@ -10,7 +10,10 @@ module.exports = srcPath => {
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
-            const s = msg => Broadcast.sayAtExcept(player.room, msg);
+            const sayMe = msg => Broadcast.sayAtExcept(player, msg);
+            const sayOther = msg =>
+                Broadcast.sayAtExcept(player.room, msg, [player]);
+            const sayAll = msg => Broadcast.sayAtExcept(player.room, msg);
 
             let [name, opt1, opt2] = input.split(' ');
             let type = '';
@@ -54,7 +57,7 @@ module.exports = srcPath => {
             name = name.toLowerCase();
 
             if (!cls.weapon(name)) {
-                return s(
+                return sayMe(
                     `invalid weapon, have you added ${name} to your weapons?`
                 );
             }
@@ -82,29 +85,29 @@ module.exports = srcPath => {
             const attack = cls.attack(name, type, sneak);
             let crit = attack.rolls.isCrit() ? ' <red>CRITICAL HIT!</red>' : '';
 
-            s(
+            sayAll(
                 `<cyan>${
                     player.name
                 }</cyan> makes an attack roll wielding <cyan>${a(name)}</cyan>`
             );
-            // s(``);
-            s(
+            sayAll(
                 `Attack roll: <yellow>${
                     attack.rolls.attackRoll.total
                 }</yellow>${crit}`
             );
-            // s(`${attack.rolls.attackRoll}${advantageDisadvantageNotes}${crit}`);
-            // s(``);
-            s(`Damage roll: <yellow>${attack.rolls.damageRoll.total}</yellow>`);
-            // s(`${attack.rolls.damageRoll}${sneakAttackNotes}`);
-            // s(``);
-            // s(`Weapon information: ${name}`);
-            // s(
-            //     `Range: ${attack.range}, Modifier: ${
-            //         attack.modifier
-            //     }, Damage: ${attack.damage}`
-            // );
-            // s(`${attack.notes}`);
+            sayMe(
+                `Attack roll information: ${
+                    attack.rolls.attackRoll
+                }${advantageDisadvantageNotes}`
+            );
+            sayAll(
+                `Damage roll: <yellow>${attack.rolls.damageRoll.total}</yellow>`
+            );
+            sayMe(
+                `Damage roll information: ${
+                    attack.rolls.damageRoll
+                }${sneakAttackNotes}`
+            );
         },
     };
 };

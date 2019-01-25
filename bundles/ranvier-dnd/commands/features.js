@@ -15,8 +15,8 @@ module.exports = srcPath => {
             );
             s(``);
             cls.features.forEach(feat => {
-                s(`Name: ${feat.name}`);
-                s(`Level: ${feat.level}`);
+                s(`Name: <yellow>${feat.name}</yellow>`);
+                s(`Level: <yellow>${feat.level}</yellow>`);
                 s(`Description: ${feat.desc}`);
                 s(``);
             });

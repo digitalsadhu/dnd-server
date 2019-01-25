@@ -4,26 +4,40 @@ const PlayerClass = require('../player-class');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
-    const s = m => Broadcast.sayAtExcept(player.room, m);
 
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
+            const s = m => Broadcast.sayAtExcept(player.room, m);
+            const sayMe = msg => Broadcast.sayAtExcept(player, msg);
+            const sayOther = msg =>
+                Broadcast.sayAtExcept(player.room, msg, [player]);
+            const sayAll = msg => Broadcast.sayAtExcept(player.room, msg);
 
             if (!input) {
-                s(
-                    `<cyan>${player.name}'s</cyan> hit points are<yellow>${
+                sayOther(
+                    `<cyan>${player.name}'s</cyan> hit points are <yellow>${
                         cls.currentHp
                     }/${cls.maxHp}</yellow>`
+                );
+                sayMe(
+                    `Your hit points are <yellow>${cls.currentHp}/${
+                        cls.maxHp
+                    }</yellow>`
                 );
                 return;
             }
 
             if (input.trim() === '/') {
-                s(
-                    `<cyan>${player.name}'s</cyan> hit points are<yellow>${
+                sayOther(
+                    `<cyan>${player.name}'s</cyan> hit points are <yellow>${
                         cls.currentHp
                     }/${cls.maxHp}</yellow>`
+                );
+                sayMe(
+                    `Your hit points are <yellow>${cls.currentHp}/${
+                        cls.maxHp
+                    }</yellow>`
                 );
                 return;
             }
@@ -31,10 +45,15 @@ module.exports = srcPath => {
             if (input.includes('-') || input.includes('+')) {
                 const newValue = parseInt(input, 10);
                 cls.currentHp = cls.currentHp + newValue;
-                s(
+                sayOther(
                     `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
                         cls.currentHp
                     }/${cls.maxHp}</yellow>`
+                );
+                sayMe(
+                    `Your hit points are now <yellow>${cls.currentHp}/${
+                        cls.maxHp
+                    }</yellow>`
                 );
                 return;
             }
@@ -42,10 +61,15 @@ module.exports = srcPath => {
             if (!input.includes('/')) {
                 const newValue = parseInt(input, 10);
                 cls.currentHp = newValue;
-                s(
+                sayAll(
                     `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
                         cls.currentHp
                     }/${cls.maxHp}</yellow>`
+                );
+                sayMe(
+                    `Your hit points are now <yellow>${cls.currentHp}/${
+                        cls.maxHp
+                    }</yellow>`
                 );
                 return;
             }
@@ -65,10 +89,15 @@ module.exports = srcPath => {
                 }
             }
 
-            s(
+            sayOther(
                 `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
                     cls.currentHp
                 }/${cls.maxHp}</yellow>`
+            );
+            sayMe(
+                `Your hit points are now <yellow>${cls.currentHp}/${
+                    cls.maxHp
+                }</yellow>`
             );
         },
     };

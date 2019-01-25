@@ -8,6 +8,10 @@ module.exports = srcPath => {
     return {
         command: state => (skill, player) => {
             const cls = new PlayerClass(player, state);
+            const sayMe = msg => Broadcast.sayAtExcept(player, msg);
+            const sayOther = msg =>
+                Broadcast.sayAtExcept(player.room, msg, [player]);
+            const sayAll = msg => Broadcast.sayAtExcept(player.room, msg);
 
             const lastChar = skill[skill.length - 1];
             let type = '';
@@ -24,7 +28,7 @@ module.exports = srcPath => {
 
             const roll = cls.makeSkillCheck(skill, type);
 
-            let message = `${skill} check for ${player.name}`;
+            let message = `a ${skill} check`;
 
             if (type === 'advantage') {
                 message += ' at advantage';
@@ -33,7 +37,12 @@ module.exports = srcPath => {
             if (type === 'disadvantage') {
                 message += ' at disadvantage';
             }
-            Broadcast.sayAtExcept(player, `${message} ${roll}`);
+            sayOther(
+                `<cyan>${player.name}</cyan> makes ${message}: <yellow>${
+                    roll.total
+                }</yellow>`
+            );
+            sayMe(`You make ${message}: <yellow>${roll}</yellow>`);
         },
     };
 };

@@ -11,9 +11,32 @@ module.exports = srcPath => {
 
             if (value) {
                 cls.ac = value;
+
+                Broadcast.sayAt(
+                    player,
+                    `Your armor class is now <yellow>${cls.ac}</yellow>`
+                );
+                Broadcast.sayAtExcept(
+                    player.room,
+                    `<cyan>${player.name}'s</cyan> armor class is now <yellow>${
+                        cls.ac
+                    }</yellow>`,
+                    [player]
+                );
+                return;
             }
 
-            Broadcast.sayAtExcept(player, `armor class ${cls.ac}`);
+            Broadcast.sayAt(
+                player,
+                `Your armor class is <yellow>${cls.ac}</yellow>`
+            );
+            Broadcast.sayAtExcept(
+                player.room,
+                `<cyan>${player.name}'s</cyan> armor class is <yellow>${
+                    cls.ac
+                }</yellow>`,
+                [player]
+            );
         },
     };
 };
