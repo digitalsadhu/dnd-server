@@ -2,7 +2,7 @@
 
 const { EventUtil } = require('ranvier');
 const PlayerClass = require('../player-class');
-const a = require('indefitite');
+const a = require('indefinite');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
