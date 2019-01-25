@@ -8,11 +8,16 @@ module.exports = srcPath => {
     return {
         command: state => (args, player) => {
             const roller = new DiceRoller();
-            Broadcast.sayAtExcept(
+            Broadcast.sayAt(
                 player,
+                `You roll the dice! <yellow>${roller.roll(args)}</yellow>`
+            );
+            Broadcast.sayAtExcept(
+                player.room,
                 `<cyan>${
                     player.name
-                }</cyan> rolls the dice! <yellow>${roller.roll(args)}</yellow>`
+                }</cyan> rolls the dice! <yellow>${roller.roll(args)}</yellow>`,
+                [player]
             );
         },
     };
