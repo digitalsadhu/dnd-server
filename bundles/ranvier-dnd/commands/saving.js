@@ -8,6 +8,9 @@ module.exports = srcPath => {
     return {
         command: state => (attr, player) => {
             const cls = new PlayerClass(player, state);
+            const sayMe = msg => Broadcast.sayAtExcept(player, msg);
+            const sayOther = msg =>
+                Broadcast.sayAtExcept(player.room, msg, [player]);
 
             const lastChar = attr[attr.length - 1];
             let type = '';
@@ -24,7 +27,7 @@ module.exports = srcPath => {
 
             const roll = cls.makeSavingThrow(attr, type);
 
-            let message = `${attr} save for ${player.name}`;
+            let message = `a ${attr} saving throw`;
 
             if (type === 'advantage') {
                 message += ' at advantage';
@@ -34,7 +37,12 @@ module.exports = srcPath => {
                 message += ' at disadvantage';
             }
 
-            Broadcast.sayAtExcept(player, `${message} ${roll}`);
+            sayOther(
+                `<cyan>${player.name}</cyan> makes ${message}: <yellow>${
+                    roll.total
+                }</yellow>`
+            );
+            sayMe(`You make ${message}: <yellow>${roll}</yellow>`);
         },
     };
 };
