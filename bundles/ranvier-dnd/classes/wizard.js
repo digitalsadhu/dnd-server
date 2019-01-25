@@ -24,7 +24,7 @@ module.exports = srcPath => {
             cls.maxHp = 8;
             cls.currentHp = 8;
             cls.ac = 11;
-            cls.hitdice = '1d8';
+            cls.hitdice = '1d6';
             cls.level = 1;
             cls.speed = 25;
             cls.proficiency = 2;
@@ -44,7 +44,7 @@ module.exports = srcPath => {
                 'Elvish',
                 'Gnomish',
             ];
-            cls.defenses = ['Poison'];
+            cls.defenses = [];
 
             player.setMeta('weapons', []);
 
