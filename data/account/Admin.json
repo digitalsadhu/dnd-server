@@ -103,10 +103,14 @@
     },
     {
       "username": "Samwise",
-      "deleted": false
+      "deleted": true
     },
     {
       "username": "Wiz",
+      "deleted": true
+    },
+    {
+      "username": "Sam",
       "deleted": false
     }
   ],

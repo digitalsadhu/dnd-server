@@ -7,7 +7,7 @@ const PlayerClass = require('../player-class');
  */
 module.exports = srcPath => {
     return {
-        name: 'cleric',
+        name: 'Cleric',
         description: 'Aurorette Hammerblower the human cleric',
         abilityTable: {},
 

@@ -7,7 +7,7 @@ const PlayerClass = require('../player-class');
  */
 module.exports = srcPath => {
     return {
-        name: 'wizard',
+        name: 'Wizard',
         description: 'Dimble the Gnome wizard',
         abilityTable: {},
 
