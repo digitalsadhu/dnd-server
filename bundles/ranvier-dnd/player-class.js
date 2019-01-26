@@ -5,6 +5,7 @@ const AttackRoll = require('./attack-roll');
 const FeatureManager = require('./feature-manager');
 const SpellManager = require('./spell-manager');
 const TraitManager = require('./trait-manager');
+const SpellcastingManager = require('./spellcasting-manager');
 
 const skills = {
     str: 'strength',
@@ -110,6 +111,7 @@ module.exports = class PlayerClass {
         this.featureManager = new FeatureManager();
         this.spellManager = new SpellManager();
         this.traitManager = new TraitManager();
+        this.spellcastingManager = new SpellcastingManager();
     }
 
     modifier(attr) {
@@ -314,6 +316,44 @@ module.exports = class PlayerClass {
 
     set class(cclass) {
         this.player.setMeta('cclass', cclass);
+    }
+
+    get spellcasting() {
+        return this.spellcastingManager.spellcastingByClass(this.class);
+    }
+
+    get spellcastingAttr() {
+        try {
+            return this.spellcasting.spellcasting_ability.name.toLowerCase();
+        } catch (err) {
+            return null;
+        }
+    }
+
+    get spellSaveDC() {
+        try {
+            return 10 + this.modifier(this.spellcastingAttr);
+        } catch (err) {
+            return 10;
+        }
+    }
+
+    get spellAttackModifier() {
+        try {
+            return (
+                this.proficiency + this.modifier(this.spellcastingAttr)
+            );
+        } catch (err) {
+            return 0;
+        }
+    }
+
+    get spellModifier() {
+        try {
+            return this.modifier(this.spellcastingAttr);
+        } catch (err) {
+            return 0;
+        }
     }
 
     get str() {

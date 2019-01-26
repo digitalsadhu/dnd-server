@@ -11,7 +11,7 @@ module.exports = srcPath => {
             const s = msg => Broadcast.sayAt(player, msg);
 
             s(
-                `At your current level you have access to the following features`
+                `At your current level you have access to the following class features`
             );
             s(``);
             cls.features.forEach(feat => {

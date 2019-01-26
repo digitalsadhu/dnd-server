@@ -111,7 +111,7 @@
     },
     {
       "username": "Sam",
-      "deleted": false
+      "deleted": true
     },
     {
       "username": "Wizz",
@@ -119,6 +119,10 @@
     },
     {
       "username": "Mrwizz",
+      "deleted": true
+    },
+    {
+      "username": "George",
       "deleted": false
     }
   ],
