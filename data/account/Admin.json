@@ -123,6 +123,10 @@
     },
     {
       "username": "George",
+      "deleted": true
+    },
+    {
+      "username": "Boo",
       "deleted": false
     }
   ],

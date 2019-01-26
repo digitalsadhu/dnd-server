@@ -21,4 +21,11 @@ module.exports = [
     { name: 'con', base: 0 },
     { name: 'cha', base: 0 },
     { name: 'wis', base: 0 },
+
+    { name: 'xp', base: 0 },
+    { name: 'pp', base: 0 },
+    { name: 'gp', base: 0 },
+    { name: 'ep', base: 0 },
+    { name: 'sp', base: 0 },
+    { name: 'cp', base: 0 },
 ];

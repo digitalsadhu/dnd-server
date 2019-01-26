@@ -340,9 +340,7 @@ module.exports = class PlayerClass {
 
     get spellAttackModifier() {
         try {
-            return (
-                this.proficiency + this.modifier(this.spellcastingAttr)
-            );
+            return this.proficiency + this.modifier(this.spellcastingAttr);
         } catch (err) {
             return 0;
         }
@@ -833,17 +831,109 @@ module.exports = class PlayerClass {
         return this.player.save();
     }
 
-    // SECTION: ATTACKING AND SKILLS/SPELLS
-    // TODO: make an attack roll, interactive menu
-    // TODO: make an attack roll, interactive menu
-    // TODO: make a damage roll
-    // TODO: skills
-    // TODO: spells
-    // TODO: heal
-    // TODO: damage
+    get xp() {
+        if (this.player.hasAttribute('xp')) {
+            return this.player.getAttribute('xp');
+        } else {
+            return 0;
+        }
+    }
+
+    set xp(value) {
+        if (this.player.hasAttribute('xp')) {
+            this.player.setAttributeBase('xp', value);
+        } else {
+            const xp = this.state.AttributeFactory.create('xp', value);
+            this.player.addAttribute(xp);
+        }
+    }
+
+    get pp() {
+        if (this.player.hasAttribute('pp')) {
+            return this.player.getAttribute('pp');
+        } else {
+            return 0;
+        }
+    }
+
+    set pp(value) {
+        if (this.player.hasAttribute('pp')) {
+            this.player.setAttributeBase('pp', value);
+        } else {
+            const pp = this.state.AttributeFactory.create('pp', value);
+            this.player.addAttribute(pp);
+        }
+    }
+
+    get gp() {
+        if (this.player.hasAttribute('gp')) {
+            return this.player.getAttribute('gp');
+        } else {
+            return 0;
+        }
+    }
+
+    set gp(value) {
+        if (this.player.hasAttribute('gp')) {
+            this.player.setAttributeBase('gp', value);
+        } else {
+            const gp = this.state.AttributeFactory.create('gp', value);
+            this.player.addAttribute(gp);
+        }
+    }
+
+    get ep() {
+        if (this.player.hasAttribute('ep')) {
+            return this.player.getAttribute('ep');
+        } else {
+            return 0;
+        }
+    }
+
+    set ep(value) {
+        if (this.player.hasAttribute('ep')) {
+            this.player.setAttributeBase('ep', value);
+        } else {
+            const ep = this.state.AttributeFactory.create('ep', value);
+            this.player.addAttribute(ep);
+        }
+    }
+
+    get sp() {
+        if (this.player.hasAttribute('sp')) {
+            return this.player.getAttribute('sp');
+        } else {
+            return 0;
+        }
+    }
+
+    set sp(value) {
+        if (this.player.hasAttribute('sp')) {
+            this.player.setAttributeBase('sp', value);
+        } else {
+            const sp = this.state.AttributeFactory.create('sp', value);
+            this.player.addAttribute(sp);
+        }
+    }
+
+    get cp() {
+        if (this.player.hasAttribute('cp')) {
+            return this.player.getAttribute('cp');
+        } else {
+            return 0;
+        }
+    }
+
+    set cp(value) {
+        if (this.player.hasAttribute('cp')) {
+            this.player.setAttributeBase('cp', value);
+        } else {
+            const cp = this.state.AttributeFactory.create('cp', value);
+            this.player.addAttribute(cp);
+        }
+    }
 
     // SECTION: EQUIPMENT
-    // TODO: money
     // TODO: equipment
     // TODO: attunement
 
