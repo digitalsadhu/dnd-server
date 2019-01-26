@@ -115,6 +115,10 @@
     },
     {
       "username": "Wizz",
+      "deleted": true
+    },
+    {
+      "username": "Mrwizz",
       "deleted": false
     }
   ],

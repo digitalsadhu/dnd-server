@@ -4,6 +4,7 @@ const { DiceRoller } = require('rpg-dice-roller');
 const AttackRoll = require('./attack-roll');
 const FeatureManager = require('./feature-manager');
 const SpellManager = require('./spell-manager');
+const TraitManager = require('./trait-manager');
 
 const skills = {
     str: 'strength',
@@ -108,6 +109,7 @@ module.exports = class PlayerClass {
         this.roller = new DiceRoller();
         this.featureManager = new FeatureManager();
         this.spellManager = new SpellManager();
+        this.traitManager = new TraitManager();
     }
 
     modifier(attr) {
@@ -272,6 +274,30 @@ module.exports = class PlayerClass {
 
     set subrace(subrace) {
         this.player.setMeta('subrace', subrace);
+    }
+
+    get raceTraits() {
+        if (this.race) {
+            return this.traitManager.traitsByRace(this.race);
+        } else {
+            return [];
+        }
+    }
+
+    get subRaceTraits() {
+        if (this.subrace) {
+            return this.traitManager.traitsBySubRace(this.subrace);
+        } else {
+            return [];
+        }
+    }
+
+    get allTraits() {
+        const traits = new Map();
+        this.raceTraits.concat(this.subRaceTraits).forEach(trait => {
+            traits.set(trait.name, trait);
+        });
+        return Array.from(traits.values());
     }
 
     get subclass() {

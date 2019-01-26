@@ -15,6 +15,7 @@ module.exports = srcPath => {
             const cls = new PlayerClass(player, state);
             cls.class = 'barbarian';
             cls.race = 'dwarf';
+            cls.subrace = 'hill dwarf';
             cls.str = 17;
             cls.dex = 13;
             cls.con = 16;
