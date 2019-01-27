@@ -27,6 +27,14 @@
     },
     {
       "username": "Frenzy",
+      "deleted": true
+    },
+    {
+      "username": "Ccc",
+      "deleted": true
+    },
+    {
+      "username": "Jon",
       "deleted": false
     }
   ],

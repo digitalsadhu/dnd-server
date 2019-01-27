@@ -80,6 +80,19 @@ module.exports = srcPath => {
             ];
             cls.maxSpellSlots = 2;
             cls.currentSpellSlots = 2;
+
+            cls.equipment = [
+                { name: 'Backpack', qty: 1 },
+                { name: 'Bedroll', qty: 1 },
+                { name: 'Candle', qty: 5 },
+                { name: 'Clothes, Costume', qty: 3 },
+                { name: 'Dagger', qty: 1 },
+                { name: 'Disguise Kit', qty: 1 },
+                { name: 'Flute', qty: 1 },
+                { name: 'Leather', qty: 1 },
+                { name: 'Lute', qty: 1 },
+                { name: 'Rapier', qty: 1 },
+            ];
         },
 
         setupPlayer: (state, player) => {

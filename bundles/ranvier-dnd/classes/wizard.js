@@ -79,6 +79,19 @@ module.exports = srcPath => {
             ];
             cls.maxSpellSlots = 2;
             cls.currentSpellSlots = 2;
+
+            cls.equipment = [
+                { name: 'Backpack', qty: 1 },
+                { name: 'Book', qty: 1 },
+                { name: 'Ink(1 ounce bottle)', qty: 1 },
+                { name: 'Ink Pen', qty: 1 },
+                { name: 'Little Bag of Sand', qty: 1 },
+                { name: 'Parchment(one sheet)', qty: 5 },
+                { name: 'Quarterstaff', qty: 1 },
+                { name: 'Rod', qty: 1 },
+                { name: 'Small Knife', qty: 1 },
+                { name: 'Spellbook', qty: 1 },
+            ];
         },
 
         setupPlayer: (state, player) => {

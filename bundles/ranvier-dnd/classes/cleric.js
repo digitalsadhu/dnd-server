@@ -76,6 +76,19 @@ module.exports = srcPath => {
             ];
             cls.maxSpellSlots = 2;
             cls.currentSpellSlots = 2;
+
+            cls.equipment = [
+                { name: 'Alms Box', qty: 1 },
+                { name: 'Backpack', qty: 1 },
+                { name: 'Blanket', qty: 1 },
+                { name: 'Block of Incense', qty: 2 },
+                { name: 'Candle', qty: 10 },
+                { name: 'Censer', qty: 1 },
+                { name: 'Chain Mail', qty: 1 },
+                { name: 'Crossbow Bolts', qty: 20 },
+                { name: 'Crossbow, Light', qty: 1 },
+                { name: 'Mace', qty: 1 },
+            ];
         },
 
         setupPlayer: (state, player) => {

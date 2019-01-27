@@ -933,8 +933,15 @@ module.exports = class PlayerClass {
         }
     }
 
+    get equipment() {
+        return this.player.getMeta('equipment') || [];
+    }
+
+    set equipment(value) {
+        this.player.setMeta('equipment', value);
+    }
+
     // SECTION: EQUIPMENT
-    // TODO: equipment
     // TODO: attunement
 
     // SECTION: BACKGROUND

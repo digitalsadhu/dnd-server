@@ -12,7 +12,6 @@ module.exports = srcPath => {
         abilityTable: {},
 
         initPlayer: (state, player) => {
-            console.log('YUSSSSSSSS!!!');
             const cls = new PlayerClass(player, state);
             cls.xp = 0;
             cls.pp = 0;
@@ -76,6 +75,20 @@ module.exports = srcPath => {
                 '4',
                 'Bludgeoning Damage'
             );
+
+            cls.equipment = [
+                { name: 'Backpack', qty: 1 },
+                { name: 'Bedroll', qty: 1 },
+                { name: 'Greataxe', qty: 1 },
+                { name: 'Handaxe', qty: 1 },
+                { name: 'Javelin', qty: 4 },
+                { name: 'Mess Kit', qty: 1 },
+                { name: 'Rations(1 day)', qty: 10 },
+                { name: 'Rope, Hempen(50 feet)', qty: 1 },
+                { name: 'Tinderbox', qty: 1 },
+                { name: 'Torch', qty: 10 },
+                { name: 'Waterskin', qty: 1 },
+            ];
         },
 
         setupPlayer: (state, player) => {
