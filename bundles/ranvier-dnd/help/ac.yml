@@ -1,0 +1,8 @@
+---
+command: ac
+body: |
+    Display or set your character's armor class value
+
+    Examples
+    ac                Display armor class
+    ac 15             Set your armor class to 15

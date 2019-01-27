@@ -1,0 +1,14 @@
+---
+command: attack
+body: |
+    Use a weapon to make an attack roll. Proficiency and attribute modifiers are automatically 
+    added to the roll based on your characters class and proficiencies as well as the weapon you specify.
+    Attack and damage rolls are made at the same time. If you need to attack with advantage, add the + character
+    to the end of the roll. If you need to attack with disadvantage, add the - character to the end of the roll.
+    If the situation calls for a more complex roll that isn't automatically handled by this command, use the
+    roll command instead.
+
+    Examples
+    attack greatsword   Make an attack roll using a greatsword
+    attack dagger +     Make an attack roll with a dagger at advantage
+    attack dagger -     Make an attack roll with a dagger at disadvantage

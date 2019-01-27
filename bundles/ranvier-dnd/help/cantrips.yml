@@ -1,0 +1,9 @@
+---
+command: attack
+body: |
+    List out the cantrips your character knows.
+    You can then use the spells command to then display more information about the cantrips your character knows.
+
+    Examples
+    cantrips                  Display all cantrips your character knows
+    spell vicious mockery    Display information about the vicious mockery cantrip

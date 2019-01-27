@@ -1,0 +1,11 @@
+---
+command: attack
+body: |
+    List out your characters primary attributes, strength, dexterity, constitution, 
+    intelligence, wisdom and charisma along with calculated modifiers.
+    You can also list out a specific attribute by name.
+
+    Examples
+    attributes            List out all attributes with values and modifiers
+    attributes str        Display the characters strength attribute
+    attributes strength   Display the characters strength attribute

@@ -1,0 +1,14 @@
+---
+command: attack
+body: |
+    Perform a skill or attribute check roll. The appropriate modifiers will be added to the roll 
+    automatically. Eg. If your character is proficient at insight and has an intelligence score of 17
+    then +5 will automatically be added to the roll.
+    If the DM asks for something like a perception check you should use this command.
+    You can use the + and - symbols to make the roll at advantage or disadvantage respectively
+
+    Examples
+    check perception      Make a perception check
+    check perception +    Make a perception check at advantage
+    check str             Make a strength check
+    check strength        Make a strength check

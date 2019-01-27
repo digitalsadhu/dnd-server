@@ -1,0 +1,10 @@
+---
+command: roll
+body: |
+    Roll a defined number of dice and add any specified modifiers
+
+    Examples
+    roll 2d20         Roll 2 20 sided dice
+    roll 1d6          Roll 1 6 sided dice
+    roll 3d6+3        Roll 3 6 sided dice and add 3
+    roll 2d20-L       Roll 2 20 sided dice and drop the lowest result
