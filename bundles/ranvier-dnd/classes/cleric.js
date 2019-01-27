@@ -72,7 +72,7 @@ module.exports = srcPath => {
             cls.currentSpellSlots = 2;
 
             player.prompt =
-                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <b><red>%slots.current%</red></b>/<red>%slots.max%</red> <b>ss</b> ]';
+                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <b><cyan>%slots.current%</cyan></b>/<cyan>%slots.max%</cyan> <b>ss</b> <yellow>%xp.max%</yellow> <b>xp</b> ]';
         },
     };
 };

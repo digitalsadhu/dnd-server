@@ -73,7 +73,7 @@ module.exports = srcPath => {
             );
 
             player.prompt =
-                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> ]';
+                '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <yellow>%xp.max%</yellow> <b>xp</b> ]';
         },
     };
 };
