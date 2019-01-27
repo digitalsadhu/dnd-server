@@ -16,7 +16,7 @@ module.exports = srcPath => {
             const cls = new PlayerClass(player, state);
             cls.xp = 0;
             cls.pp = 0;
-            cls.gp = 0;
+            cls.gp = 10;
             cls.ep = 0;
             cls.sp = 0;
             cls.cp = 0;
