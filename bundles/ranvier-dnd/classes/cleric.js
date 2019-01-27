@@ -11,8 +11,14 @@ module.exports = srcPath => {
         description: 'Aurorette Hammerblower the human cleric',
         abilityTable: {},
 
-        setupPlayer: (state, player) => {
+        initPlayer: (state, player) => {
             const cls = new PlayerClass(player, state);
+            cls.xp = 0;
+            cls.pp = 0;
+            cls.gp = 0;
+            cls.ep = 0;
+            cls.sp = 0;
+            cls.cp = 0;
             cls.class = 'cleric';
             cls.race = 'human';
             cls.str = 14;
@@ -70,7 +76,9 @@ module.exports = srcPath => {
             ];
             cls.maxSpellSlots = 2;
             cls.currentSpellSlots = 2;
+        },
 
+        setupPlayer: (state, player) => {
             player.prompt =
                 '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <b><cyan>%slots.current%</cyan></b>/<cyan>%slots.max%</cyan> <b>ss</b> <yellow>%xp.max%</yellow> <b>xp</b> ]';
         },

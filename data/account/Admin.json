@@ -7,6 +7,26 @@
     },
     {
       "username": "Jim",
+      "deleted": true
+    },
+    {
+      "username": "Tim",
+      "deleted": true
+    },
+    {
+      "username": "Bob",
+      "deleted": true
+    },
+    {
+      "username": "Finn",
+      "deleted": true
+    },
+    {
+      "username": "Foo",
+      "deleted": true
+    },
+    {
+      "username": "Frenzy",
       "deleted": false
     }
   ],

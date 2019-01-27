@@ -11,8 +11,15 @@ module.exports = srcPath => {
         description: 'Lysras Daraln, Dwarf Barbarian',
         abilityTable: {},
 
-        setupPlayer: (state, player) => {
+        initPlayer: (state, player) => {
+            console.log('YUSSSSSSSS!!!');
             const cls = new PlayerClass(player, state);
+            cls.xp = 0;
+            cls.pp = 0;
+            cls.gp = 0;
+            cls.ep = 0;
+            cls.sp = 0;
+            cls.cp = 0;
             cls.class = 'barbarian';
             cls.race = 'dwarf';
             cls.subrace = 'hill dwarf';
@@ -40,8 +47,6 @@ module.exports = srcPath => {
             cls.weaponProficiencies = ['Martial Weapons', 'Simple Weapons'];
             cls.languageProficiencies = ['Common', 'Dwarvish'];
             cls.defenses = ['Poison'];
-
-            player.setMeta('weapons', []);
 
             cls.addWeapon(
                 'Greataxe',
@@ -71,7 +76,9 @@ module.exports = srcPath => {
                 '4',
                 'Bludgeoning Damage'
             );
+        },
 
+        setupPlayer: (state, player) => {
             player.prompt =
                 '[ <b><red>%health.current%</red></b>/<red>%health.max%</red> <b>hp</b> <yellow>%xp.max%</yellow> <b>xp</b> ]';
         },
