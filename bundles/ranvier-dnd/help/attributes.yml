@@ -1,5 +1,5 @@
 ---
-command: attack
+command: attributes
 body: |
     List out your characters primary attributes, strength, dexterity, constitution, 
     intelligence, wisdom and charisma along with calculated modifiers.

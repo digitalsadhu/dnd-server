@@ -1,5 +1,5 @@
 ---
-command: attack
+command: check
 body: |
     Perform a skill or attribute check roll. The appropriate modifiers will be added to the roll 
     automatically. Eg. If your character is proficient at insight and has an intelligence score of 17
