@@ -1,0 +1,8 @@
+---
+command: initiative
+body: |
+    Roll for initiative! Use this command whenever the dungeon master calls for an initative roll.
+    This roll takes into account your characters initiative modifier.
+
+    Examples
+    initiative      roll for initiative and display the result

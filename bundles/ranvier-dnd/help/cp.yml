@@ -1,0 +1,10 @@
+---
+command: cp
+body: |
+    Display, increment, decrement or set the number of copper pieces your character has
+
+    Examples
+    cp              print out number of copper pieces your character has
+    cp 100          add 100 copper pieces to your characters total copper pieces
+    cp -100         remove 100 copper pieces from your characters total copper pieces
+    cp total 200    set your characters total number of copper pieces to 200

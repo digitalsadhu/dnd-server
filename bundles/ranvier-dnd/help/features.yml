@@ -1,0 +1,7 @@
+---
+command: features
+body: |
+    Display all the features available to your character at their current level
+
+    Examples
+    features    list out all features your character has access to

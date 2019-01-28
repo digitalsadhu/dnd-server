@@ -1,0 +1,10 @@
+---
+command: ep
+body: |
+    Display, increment, decrement or set the number of electrum pieces your character has
+
+    Examples
+    ep              print out number of electrum pieces your character has
+    ep 100          add 100 electrum pieces to your characters total electrum pieces
+    ep -100         remove 100 electrum pieces from your characters total electrum pieces
+    ep total 200    set your characters total number of electrum pieces to 200

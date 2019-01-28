@@ -1,0 +1,12 @@
+---
+command: hp
+body: |
+    Display, increment, decrement or set the number of current or maximum hit points your character has
+
+    Examples
+    hp              print out number of number of hit points your character has
+    hp 15/15        set current and maximum hit points to 15
+    hp 15           set current hit points to 15
+    hp /15          set maximum hit points to 15
+    hp +5           increase your current hit points by 5
+    hp -5           lower your current hit points by 5

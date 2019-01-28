@@ -1,0 +1,8 @@
+---
+command: equipment
+body: |
+    Display your characters equipment or list out all equipment available in the game.
+
+    Examples
+    equipment       List out your characters equipment
+    equipment all   List out all available equipment in the game

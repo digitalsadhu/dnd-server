@@ -1,0 +1,10 @@
+---
+command: sp
+body: |
+    Display, increment, decrement or set the number of silver pieces your character has
+
+    Examples
+    sp              print out number of silver pieces your character has
+    sp 100          add 100 silver pieces to your characters total silver pieces
+    sp -100         remove 100 silver pieces from your characters total silver pieces
+    sp total 200    set your characters total number of silver pieces to 200

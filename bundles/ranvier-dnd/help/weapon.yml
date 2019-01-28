@@ -1,0 +1,7 @@
+---
+command: weapon
+body: |
+    Print out detailed information about a particular weapon
+
+    Examples
+    weapon greataxe   print out detailed information about greataxes

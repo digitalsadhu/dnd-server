@@ -1,0 +1,10 @@
+---
+command: xp
+body: |
+    Display, increment, decrement or set the amount of experience points your character has
+
+    Examples
+    xp              print out number of number of experience points your character has
+    xp 100          set current and maximum experience points to 100
+    xp +75          increase your current experience points by 75
+    xp -75          lower your current experience points by 75

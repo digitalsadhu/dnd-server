@@ -1,0 +1,9 @@
+---
+command: spellbook
+body: |
+    Print out a list of spells your character knows.
+    You can then use the spell command to look up more information about a specific spell
+
+    Examples
+    spellbook           print out a list of spells your character knows
+    spell charm person  print out information about a specific spell

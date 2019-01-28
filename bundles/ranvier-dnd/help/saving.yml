@@ -1,0 +1,15 @@
+---
+command: saving
+body: |
+    Roll a saving through for a given attribute. You can roll saving throws for any of the 6 attributes, 
+    strength, intelligence, wisdom, constitution, dexterity or charisma.
+    When you make a saving throw, your characters appropriate modifier will automatically be taken into account.
+    You can use the first 3 letters of any attribute for the same effect.
+    If for some reason you have advantage or disadvantage on the roll you can use + or - to make the roll with
+    advantage or disadvantage.
+
+    Examples
+    saving strength      roll a strength saving throw
+    saving str           roll a strength saving throw
+    saving int +         roll an intelligence saving throw with advantage
+    saving charisma -    roll a charisma saving throw with disadvantage

@@ -1,0 +1,10 @@
+---
+command: pp
+body: |
+    Display, increment, decrement or set the number of platinum pieces your character has
+
+    Examples
+    pp              print out number of platinum pieces your character has
+    pp 100          add 100 platinum pieces to your characters total platinum pieces
+    pp -100         remove 100 platinum pieces from your characters total platinum pieces
+    pp total 200    set your characters total number of platinum pieces to 200

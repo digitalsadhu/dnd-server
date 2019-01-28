@@ -1,0 +1,10 @@
+---
+command: gp
+body: |
+    Display, increment, decrement or set the number of gold pieces your character has
+
+    Examples
+    gp              print out number of gold pieces your character has
+    gp 100          add 100 gold pieces to your characters total gold pieces
+    gp -100         remove 100 gold pieces from your characters total gold pieces
+    gp total 200    set your characters total number of gold pieces to 200

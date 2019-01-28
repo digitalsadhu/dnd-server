@@ -1,0 +1,8 @@
+---
+command: spell-modifiers
+body: |
+    Print out your characters spell modifiers
+    These are your spell attack modifier, spell save DC and base spell modifier.
+
+    Examples
+    spell-modifers      print out your characters spell attack modifier, spell save DC and base spell modifier

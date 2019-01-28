@@ -1,0 +1,10 @@
+---
+command: weapons
+body: |
+    Print out a list of weapons your character currently has or list out all weapons in the game.
+    You can use the weapon command to look up more information about a specific weapon.
+
+    Examples
+    weapons           print out a list of weapons your character has
+    weapons all       print out a list of all weapons available in the game
+    weapon greataxe   print out detailed information about greataxes

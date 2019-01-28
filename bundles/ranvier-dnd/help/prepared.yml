@@ -1,0 +1,8 @@
+---
+command: prepared
+body: |
+    Print out a list of spells your character currently has prepared.
+    Prepared spells are ready to be cast so long as you have spell slots left.
+
+    Examples
+    prepared      print out a list of spells your character has prepared

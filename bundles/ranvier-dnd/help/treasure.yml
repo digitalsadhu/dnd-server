@@ -1,0 +1,8 @@
+---
+command: treasure
+body: |
+    Print out a summary of all treasure your character has collected
+    All coin types are listed with their amounts.
+
+    Examples
+    treasure      print out a list of pp, gp, ep, sp and cp your character has collected

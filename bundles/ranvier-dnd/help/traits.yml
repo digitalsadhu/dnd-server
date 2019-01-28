@@ -1,0 +1,7 @@
+---
+command: traits
+body: |
+    Print out a list abilities your character has due to his or her race or subrace
+
+    Examples
+    traits            print out a list of racial traits your character has

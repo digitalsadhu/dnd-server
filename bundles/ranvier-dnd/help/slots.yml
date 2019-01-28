@@ -1,0 +1,12 @@
+---
+command: slots
+body: |
+    Display, increment, decrement or set the number of current or maximum spell slots your character has
+
+    Examples
+    slots              print out number of number of spell slots your character has
+    slots 2/2        set current and maximum spell slots to 2
+    slots 2           set current spell slots to 2
+    slots /2          set maximum spell slots to 2
+    slots +1           increase your current spell slots by 1
+    slots -1           lower your current spell slots by 1

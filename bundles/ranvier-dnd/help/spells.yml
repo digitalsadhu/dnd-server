@@ -1,0 +1,7 @@
+---
+command: spell
+body: |
+    Print out information about a specific spell.
+
+    Examples
+    spell charm person      print out information about the charm person spell
