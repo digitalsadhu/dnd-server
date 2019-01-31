@@ -3,6 +3,7 @@
 const { EventUtil } = require('ranvier');
 const PlayerClass = require('../player-class');
 const a = require('indefinite');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
@@ -10,9 +11,9 @@ module.exports = srcPath => {
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
+            const history = new GameHistory(Broadcast, player);
+            const sayOther = msg => history.log(msg);
             const sayMe = msg => Broadcast.sayAtExcept(player, msg);
-            const sayOther = msg =>
-                Broadcast.sayAtExcept(player.room, msg, [player]);
             const sayAll = msg => Broadcast.sayAtExcept(player.room, msg);
 
             let [name, opt1, opt2] = input.split(' ');

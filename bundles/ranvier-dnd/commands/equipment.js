@@ -2,13 +2,18 @@
 
 const EquipmentManager = require('../equipment-manager');
 const PlayerClass = require('../player-class');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
 
     return {
         command: state => (input, player) => {
+            const history = new GameHistory(Broadcast, player);
+
             const s = msg => Broadcast.sayAt(player, msg);
+            const sayOther = msg => history.log(msg);
+
             const cls = new PlayerClass(player, state);
             const manager = new EquipmentManager();
 

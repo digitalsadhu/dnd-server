@@ -4,10 +4,14 @@ const PlayerClass = require('../player-class');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
+    const { GameHistory } = require('../../../util/dnd-helpers');
 
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
+            const history = new GameHistory(Broadcast, player);
+
+            const sayOther = msg => history.log(msg);
             const s = msg => Broadcast.sayAt(player, msg);
 
             s(

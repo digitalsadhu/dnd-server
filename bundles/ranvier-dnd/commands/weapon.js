@@ -1,14 +1,18 @@
 'use strict';
 
 const WeaponManager = require('../weapon-manager');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
 
     return {
         command: state => (name, player) => {
-            const s = msg => Broadcast.sayAt(player, msg);
             const manager = new WeaponManager();
+            const history = new GameHistory(Broadcast, player);
+
+            const sayOther = msg => history.log(msg);
+            const s = msg => Broadcast.sayAt(player, msg);
 
             const w = manager.weaponByName(name);
             s(`${w.name}`);

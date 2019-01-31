@@ -1,6 +1,7 @@
 'use strict';
 
 const PlayerClass = require('../player-class');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
@@ -8,11 +9,11 @@ module.exports = srcPath => {
     return {
         command: state => (input, player) => {
             const cls = new PlayerClass(player, state);
+            const history = new GameHistory(Broadcast, player);
+
             const s = m => Broadcast.sayAtExcept(player.room, m);
-            const sayMe = msg => Broadcast.sayAtExcept(player, msg);
-            const sayOther = msg =>
-                Broadcast.sayAtExcept(player.room, msg, [player]);
-            const sayAll = msg => Broadcast.sayAtExcept(player.room, msg);
+            const sayMe = msg => Broadcast.sayAt(player, msg);
+            const sayOther = msg => history.log(msg);
 
             if (!input) {
                 sayOther(
@@ -61,7 +62,7 @@ module.exports = srcPath => {
             if (!input.includes('/')) {
                 const newValue = parseInt(input, 10);
                 cls.currentHp = newValue;
-                sayAll(
+                sayOther(
                     `<cyan>${player.name}'s</cyan> hit points are now <yellow>${
                         cls.currentHp
                     }/${cls.maxHp}</yellow>`

@@ -1,0 +1,9 @@
+---
+command: gl
+body: |
+    Print out unread game log messages for the room you are in.
+    The messages printing are all messages that have occurred during
+    the time you have been either logged out or in another room.
+
+    Examples
+    gl                Display messages

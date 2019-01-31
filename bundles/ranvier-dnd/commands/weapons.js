@@ -2,15 +2,19 @@
 
 const WeaponManager = require('../weapon-manager');
 const PlayerClass = require('../player-class');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
 
     return {
         command: state => (input, player) => {
-            const s = msg => Broadcast.sayAt(player, msg);
             const cls = new PlayerClass(player, state);
             const manager = new WeaponManager();
+            const history = new GameHistory(Broadcast, player);
+
+            const sayOther = msg => history.log(msg);
+            const s = msg => Broadcast.sayAt(player, msg);
 
             if (input === 'all') {
                 manager.weapons().forEach(w => {

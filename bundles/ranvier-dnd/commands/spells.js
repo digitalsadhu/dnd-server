@@ -2,14 +2,18 @@
 
 const PlayerClass = require('../player-class');
 const SpellManager = require('../spell-manager');
+const { GameHistory } = require('../../../util/dnd-helpers');
 
 module.exports = srcPath => {
     const Broadcast = require(srcPath + 'Broadcast');
 
     return {
         command: state => (input, player) => {
-            const s = msg => Broadcast.sayAt(player, msg);
             const manager = new SpellManager();
+            const history = new GameHistory(Broadcast, player);
+
+            const sayOther = msg => history.log(msg);
+            const s = msg => Broadcast.sayAt(player, msg);
 
             // all spells for class and level eg. wizard 2
             const match = input.match(/([a-zA-Z]*)\s([0-9])/);
