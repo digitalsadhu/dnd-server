@@ -1,6 +1,16 @@
 'use strict';
 
-const logs = {};
+const fs = require('fs');
+const { promisify } = require('util');
+const writeFile = promisify(fs.writeFile);
+
+let logs = {};
+
+try {
+    logs = require(`${__dirname}/../data/game-logs.json`);
+} catch (err) {
+    // noop
+}
 
 class GameLog {
     constructor(gameRoom, message) {
@@ -16,7 +26,12 @@ class GameLog {
         });
     }
 
-    save() {}
+    save() {
+        writeFile(
+            `${__dirname}/../data/game-logs.json`,
+            JSON.stringify(logs, null, 2)
+        ).catch(err => console.error(err));
+    }
 }
 
 module.exports.GameHistory = class GameHistory {
