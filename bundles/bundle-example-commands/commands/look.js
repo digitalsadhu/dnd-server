@@ -101,10 +101,10 @@ function lookRoom(state, player) {
         B.sayAt(player, room.description, 80);
     }
 
-    if (player.getMeta('config.minimap')) {
-        B.sayAt(player, '');
-        state.CommandManager.get('map').execute(4, player);
-    }
+    // if (player.getMeta('config.minimap')) {
+    //     B.sayAt(player, '');
+    //     state.CommandManager.get('map').execute(4, player);
+    // }
 
     B.sayAt(player, '');
 

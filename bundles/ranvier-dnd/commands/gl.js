@@ -8,7 +8,12 @@ module.exports = srcPath => {
     return {
         command: state => (value, player) => {
             const gameHistory = new GameHistory(Broadcast, player);
-            gameHistory.printUnread();
+
+            if (value) {
+                gameHistory.print(value);
+            } else {
+                gameHistory.printUnread();
+            }
         },
     };
 };

@@ -40,6 +40,30 @@ module.exports.GameHistory = class GameHistory {
         this.player = player;
     }
 
+    print(num) {
+        const bufferedLogs = [];
+        const gameRoom = this.player.room;
+        const roomKey = `${gameRoom.area.name}:${gameRoom.id}`;
+
+        if (!logs[roomKey]) {
+            this.Broadcast.sayAt(this.player, 'No logs to read');
+            return;
+        }
+
+        const numLogs = logs[roomKey].length;
+        for (let i = numLogs - 1; i >= numLogs - 1 - num && i >= 0; i--) {
+            bufferedLogs.unshift(logs[roomKey][i]);
+        }
+
+        for (let log of bufferedLogs) {
+            this.Broadcast.sayAt(this.player, log.message);
+        }
+
+        if (bufferedLogs.length === 0) {
+            this.Broadcast.sayAt(this.player, 'No logs to read');
+        }
+    }
+
     printUnread() {
         const bufferedLogs = [];
         const gameRoom = this.player.room;
