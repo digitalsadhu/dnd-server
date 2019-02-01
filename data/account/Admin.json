@@ -47,6 +47,10 @@
     },
     {
       "username": "Domm",
+      "deleted": true
+    },
+    {
+      "username": "Jamess",
       "deleted": false
     }
   ],
