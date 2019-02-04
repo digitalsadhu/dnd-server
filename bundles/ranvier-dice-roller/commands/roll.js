@@ -10,14 +10,13 @@ module.exports = {
         const roller = new DiceRoller();
         const history = new GameHistory(Broadcast, player);
 
-        Broadcast.sayAt(
-            player,
-            `You roll the dice! <yellow>${roller.roll(args)}</yellow>`
-        );
+        const roll = roller.roll(args);
+
+        Broadcast.sayAt(player, `You roll the dice! <yellow>${roll}</yellow>`);
         history.log(
-            `<cyan>${player.name}</cyan> rolls the dice! <yellow>${roller.roll(
-                args
-            )}</yellow>`
+            `<cyan>${
+                player.name
+            }</cyan> rolls the dice! <yellow>${roll}</yellow>`
         );
     },
 };
