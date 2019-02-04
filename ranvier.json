@@ -86,10 +86,10 @@
         }
     },
     "maxAccountNameLength": 20,
-    "minAccountNameLength": 3,
+    "minAccountNameLength": 2,
     "maxPlayerNameLength": 20,
     "minPlayerNameLength": 3,
-    "maxCharacters": 3,
+    "maxCharacters": 10,
     "reportToAdmins": false,
     "startingRoom": "limbo:foyer",
     "moveCommand": "move",

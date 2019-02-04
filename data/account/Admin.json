@@ -52,6 +52,10 @@
     {
       "username": "Jamess",
       "deleted": false
+    },
+    {
+      "username": "DungeonMaster",
+      "deleted": false
     }
   ],
   "password": "$2a$10$0LmX94dgDQzOvQhUsiiYBe3nTmVBfFv4HJhv.3fZaXWdW6YrzAcwK",
