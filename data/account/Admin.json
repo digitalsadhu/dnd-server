@@ -1,65 +1,13 @@
 {
-  "username": "Admin",
-  "characters": [
-    {
-      "username": "Admin",
-      "deleted": false
-    },
-    {
-      "username": "Jim",
-      "deleted": true
-    },
-    {
-      "username": "Tim",
-      "deleted": true
-    },
-    {
-      "username": "Bob",
-      "deleted": true
-    },
-    {
-      "username": "Finn",
-      "deleted": true
-    },
-    {
-      "username": "Foo",
-      "deleted": true
-    },
-    {
-      "username": "Frenzy",
-      "deleted": true
-    },
-    {
-      "username": "Ccc",
-      "deleted": true
-    },
-    {
-      "username": "Jon",
-      "deleted": true
-    },
-    {
-      "username": "Him",
-      "deleted": true
-    },
-    {
-      "username": "Jimm",
-      "deleted": true
-    },
-    {
-      "username": "Domm",
-      "deleted": true
-    },
-    {
-      "username": "Jamess",
-      "deleted": false
-    },
-    {
-      "username": "DungeonMaster",
-      "deleted": false
-    }
-  ],
-  "password": "$2a$10$0LmX94dgDQzOvQhUsiiYBe3nTmVBfFv4HJhv.3fZaXWdW6YrzAcwK",
-  "banned": false,
-  "deleted": false,
-  "metadata": {}
+    "username": "Admin",
+    "characters": [
+        {
+            "username": "Admin",
+            "deleted": false
+        }
+    ],
+    "password": "$2a$10$0LmX94dgDQzOvQhUsiiYBe3nTmVBfFv4HJhv.3fZaXWdW6YrzAcwK",
+    "banned": false,
+    "deleted": false,
+    "metadata": {}
 }
