@@ -29,7 +29,7 @@ module.exports = [
             sender: function(sender, target, message, colorify) {
                 const history = new GameHistory(null, sender);
                 history.logWithoutSaying(`${sender.name} says: '${message}'`);
-                return colorify(`You say: '${message}'`);
+                return colorify(`<cyan>You say</cyan>: '${message}'`);
             },
 
             target: function(sender, target, message, colorify) {
